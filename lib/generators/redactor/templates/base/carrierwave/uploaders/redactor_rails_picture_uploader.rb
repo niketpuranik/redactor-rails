@@ -1,17 +1,10 @@
 # encoding: utf-8
 class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   include RedactorRails::Backend::CarrierWave
-
-  # Include RMagick or ImageScience support:
-  # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  # include CarrierWave::ImageScience
 
-  # Choose what kind of storage to use for this uploader:
   storage :file
 
-  # Override the directory where uploaded files will be stored.
-  # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "system/redactor_assets/pictures/#{model.id}"
   end
@@ -37,6 +30,10 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
 
   version :content do
     process :resize_to_limit => [800, 800]
+  end
+
+  version :test do
+    process :resize_to_limit => [500, 500]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
