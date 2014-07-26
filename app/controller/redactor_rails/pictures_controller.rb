@@ -18,7 +18,7 @@ class RedactorRails::PicturesController < ApplicationController
     end
 
     if @picture.save
-      render :text => { :filelink => @picture.send(:url, :thumb) }.to_json
+      render :text => { :filelink => @picture.send(:url, :content) }.to_json
     else
       render json: { error: @picture.errors }
     end
