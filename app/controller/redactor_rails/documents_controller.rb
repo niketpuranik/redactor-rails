@@ -18,7 +18,7 @@ class RedactorRails::DocumentsController < ApplicationController
     end
 
     if @document.save
-      render :text => { :filelink => @document.url, :filename => @document.filename }.to_json
+      render :text => { :id => @document.id.to_s, :filelink => @document.url, :filename => @document.filename }.to_json
     else
       render json: { error: @document.errors }
     end

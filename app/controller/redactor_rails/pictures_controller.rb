@@ -16,7 +16,6 @@ class RedactorRails::PicturesController < ApplicationController
     file = params[:file]
     @picture.data = RedactorRails::Http.normalize_param(file, request)
     if redactor_current_user
-      Rails.logger.info "~~~~~~~~~~~~~~~adding devise"
       # @picture.send("#{RedactorRails.devise_user}=", redactor_current_user)
       @picture.assetable = redactor_current_user
     end
