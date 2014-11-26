@@ -94,6 +94,16 @@ Add to your `application.js`:
 
     //= require redactor-rails/langs/zh_tw
 
+#### Setting a max image size with carrierwave
+
+If you want to set a maximum image size used when a user uploads an image via carrierwave, open the uploader file and add add the following:
+
+    # app/uploaders/redactor_rails_picture_uploader.rb:33
+    
+    process :resize_to_limit => [500, -1]
+
+The above example will set the image to have a maximum width of 500px. 
+
 ### Using plugins
 
 This gem comes bundled with several Redactor plugins:
@@ -206,5 +216,5 @@ the `redactor-rails` project is MIT-LICENSE.
 
 You may use `Redactor` for non-commercial websites for free, however, we do not guarantee any technical support.
 
-Redactor has [3 different licenses](http://redactorjs.com/download/) for commercial use.
-For details please see [License Agreement](http://redactorjs.com/download/).
+Redactor has [3 different licenses](http://imperavi.com/redactor/download/) for commercial use.
+For details please see [License Agreement](http://imperavi.com/redactor/license/).
