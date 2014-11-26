@@ -20,7 +20,7 @@ module RedactorRails
 
   mattr_accessor :image_file_types, :document_file_types
   @@image_file_types = ["jpg", "jpeg", "png", "gif", "tiff"]
-  @@document_file_types = ["pdf", "doc", "docx", "xls", "xlsx", "rtf", "txt"]
+  @@document_file_types = ["pdf", "doc", "docx", "xls", "xlsx", "rtf", "txt", "ppt", "pptx"]
 
 
   def self.picture_model
