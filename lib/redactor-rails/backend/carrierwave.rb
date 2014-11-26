@@ -43,8 +43,8 @@ module RedactorRails
           else
             content_type = file.content_type
           end
-
           model.data_content_type = content_type.to_s
+          model.type = file.extension.to_s.downcase
         end
 
         def set_size
