@@ -4,7 +4,7 @@ require "redactor-rails/version"
 module RedactorRails
   IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/pjpeg', 'image/tiff', 'image/x-png']
 
-  FILE_TYPES = ['application/msword', 'application/pdf', 'text/plain', 'text/rtf', 'application/vnd.ms-excel']
+  FILE_TYPES = ['application/msword', 'application/pdf', 'text/plain', 'text/rtf', 'application/vnd.ms-excel', 'application/vnd.ms-powerpoint']
 
   autoload :Http, 'redactor-rails/http'
   autoload :Devise, 'redactor-rails/devise'
