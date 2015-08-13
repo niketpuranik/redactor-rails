@@ -3,9 +3,9 @@ class RedactorRails::PicturesController < ApplicationController
 
   def index
     if redactor_current_user
-      @pictures = RedactorRails.picture_model.where(:assetable_id => redactor_current_user.id)
+      @pictures = RedactorRails.picture_model.where(:assetable_id => redactor_current_user.id).desc("created_at")
     else
-      @pictures = RedactorRails.picture_model.all
+      @pictures = RedactorRails.picture_model.all.desc("created_at")
     end
     render :json => @pictures.to_json
   end
